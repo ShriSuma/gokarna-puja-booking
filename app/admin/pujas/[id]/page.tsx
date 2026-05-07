@@ -14,13 +14,18 @@ type Props = { params: Promise<{ id: string }> };
 export default async function AdminPujaEditPage(props: Props) {
   const { t } = await getServerI18n();
   const { id } = await props.params;
-  const puja = await prisma.pujaType.findUnique({
-    where: { id },
-    include: {
-      translations: true,
-      media: { where: { kind: "PUJA" }, orderBy: [{ isCover: "desc" }, { sortOrder: "asc" }, { createdAt: "asc" }] },
-    },
-  });
+  const puja = await prisma.pujaType
+    .findUnique({
+      where: { id },
+      include: {
+        translations: true,
+        media: {
+          where: { kind: "PUJA" },
+          orderBy: [{ isCover: "desc" }, { sortOrder: "asc" }, { createdAt: "asc" }],
+        },
+      },
+    })
+    .catch(() => null);
   if (!puja) notFound();
 
   return (

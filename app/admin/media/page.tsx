@@ -7,10 +7,12 @@ export const dynamic = "force-dynamic";
 
 export default async function AdminMediaPage() {
   const { t } = await getServerI18n();
-  const assets = await prisma.mediaAsset.findMany({
-    where: { kind: "GENERAL" },
-    orderBy: [{ sortOrder: "asc" }, { createdAt: "asc" }],
-  });
+  const assets = await prisma.mediaAsset
+    .findMany({
+      where: { kind: "GENERAL" },
+      orderBy: [{ sortOrder: "asc" }, { createdAt: "asc" }],
+    })
+    .catch(() => []);
 
   return (
     <AdminLayout>

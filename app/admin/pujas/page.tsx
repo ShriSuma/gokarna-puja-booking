@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 
 export default async function AdminPujasPage() {
   const { t } = await getServerI18n();
-  const pujas = await prisma.pujaType.findMany({ orderBy: { name: "asc" } });
+  const pujas = await prisma.pujaType.findMany({ orderBy: { name: "asc" } }).catch(() => []);
 
   return (
     <AdminLayout>

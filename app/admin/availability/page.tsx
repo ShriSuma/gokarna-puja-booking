@@ -8,13 +8,15 @@ export const dynamic = "force-dynamic";
 export default async function AdminAvailabilityPage() {
   const { t } = await getServerI18n();
   const [weekly, blocks, overrides, bookingRows] = await Promise.all([
-    prisma.weeklyTemplate.findMany({ orderBy: [{ dayOfWeek: "asc" }, { time: "asc" }] }),
-    prisma.dateBlock.findMany({ orderBy: { date: "asc" } }),
-    prisma.availabilitySlot.findMany({ orderBy: [{ date: "asc" }, { time: "asc" }] }),
-    prisma.booking.findMany({
-      where: { status: { not: "Cancelled" } },
-      select: { date: true, time: true },
-    }),
+    prisma.weeklyTemplate.findMany({ orderBy: [{ dayOfWeek: "asc" }, { time: "asc" }] }).catch(() => []),
+    prisma.dateBlock.findMany({ orderBy: { date: "asc" } }).catch(() => []),
+    prisma.availabilitySlot.findMany({ orderBy: [{ date: "asc" }, { time: "asc" }] }).catch(() => []),
+    prisma.booking
+      .findMany({
+        where: { status: { not: "Cancelled" } },
+        select: { date: true, time: true },
+      })
+      .catch(() => []),
   ]);
 
   const bookedMap = new Map<string, number>();
