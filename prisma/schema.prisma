@@ -1,0 +1,123 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum PujaCategory {
+  PITRI_KARYA
+  PUJA_KARYA
+}
+
+enum Language {
+  en
+  hi
+  te
+  ta
+  kn
+}
+
+enum MediaKind {
+  GENERAL
+  PUJA
+}
+
+model PujaType {
+  id                      String    @id @default(cuid())
+  slug                    String    @unique
+  name                    String
+  shortDescription        String
+  longDescriptionMarkdown String
+  category                PujaCategory @default(PITRI_KARYA)
+  price                   Int
+  durationMinutes         Int
+  isActive                Boolean   @default(true)
+  createdAt               DateTime  @default(now())
+  bookings                Booking[]
+  translations            PujaTranslation[]
+  media                   MediaAsset[]
+}
+
+/// Materialized slots for a specific date (optional). If none exist for a date, WeeklyTemplate is used.
+model AvailabilitySlot {
+  id        String   @id @default(cuid())
+  date      String
+  time      String
+  isBlocked Boolean  @default(false)
+  capacity  Int      @default(2)
+  createdAt DateTime @default(now())
+
+  @@unique([date, time])
+}
+
+/// Recurring weekly pattern (0 = Sunday … 6 = Saturday)
+model WeeklyTemplate {
+  id        String   @id @default(cuid())
+  dayOfWeek Int
+  time      String
+  capacity  Int      @default(2)
+  createdAt DateTime @default(now())
+
+  @@unique([dayOfWeek, time])
+}
+
+model DateBlock {
+  id        String   @id @default(cuid())
+  date      String   @unique
+  note      String?
+  createdAt DateTime @default(now())
+}
+
+model Booking {
+  id              String   @id @default(cuid())
+  pujaTypeId      String
+  pujaType        PujaType @relation(fields: [pujaTypeId], references: [id], onDelete: Cascade)
+  date            String
+  time            String
+  customerName    String
+  phone           String
+  email           String?
+  gotra           String?
+  notes           String?
+  status          String   @default("Payment Pending")
+  amount          Int
+  paymentStatus   String   @default("pending")
+  paymentProvider String?
+  paymentRef      String?
+  razorpayOrderId String?
+  createdAt       DateTime @default(now())
+}
+
+model PujaTranslation {
+  id                      String   @id @default(cuid())
+  pujaTypeId              String
+  language                Language
+  name                    String
+  shortDescription        String
+  longDescriptionMarkdown String
+  requirements            String   @default("")
+  benefits                String   @default("")
+  significance            String   @default("")
+  whoShouldDo             String   @default("")
+  included                String   @default("")
+  preparation             String   @default("")
+  story                   String   @default("")
+  pujaType                PujaType @relation(fields: [pujaTypeId], references: [id], onDelete: Cascade)
+
+  @@unique([pujaTypeId, language])
+}
+
+model MediaAsset {
+  id        String    @id @default(cuid())
+  kind      MediaKind
+  pujaTypeId String?
+  pujaType  PujaType? @relation(fields: [pujaTypeId], references: [id], onDelete: Cascade)
+  path      String
+  alt       String
+  sortOrder Int       @default(0)
+  isCover   Boolean   @default(false)
+  createdAt DateTime  @default(now())
+}
