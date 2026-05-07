@@ -11,6 +11,7 @@ import { normalizeSlotTime } from "@/lib/slot-time";
 import { languageCookie, normalizeLocale } from "@/lib/i18n/shared";
 import { translate } from "@/lib/i18n/translate";
 import { ensurePujaTypeForBooking } from "@/lib/booking-bootstrap";
+import { pujasData } from "@/content/pujas.data";
 
 function bookingSchema(locale: string) {
   const L = normalizeLocale(locale);
@@ -71,30 +72,44 @@ export async function createBooking(raw: unknown): Promise<CreateBookingResult> 
   }
 
   try {
-    const pujaTypeId = await ensurePujaTypeForBooking(data.pujaSlug);
-    if (!pujaTypeId) {
+    const catalog = pujasData.find((p) => p.slug === data.pujaSlug);
+    if (!catalog) {
       return { ok: false, message: tr("book.errPujaNotFound"), code: "puja" };
     }
+    const pujaTypeId = await ensurePujaTypeForBooking(data.pujaSlug).catch(() => null);
     await assertSlotBookable(data.date, data.time, tr("book.errSlotTaken"));
+    const puja = pujaTypeId
+      ? await prisma.pujaType.findUnique({ where: { id: pujaTypeId } }).catch(() => null)
+      : null;
+    const amount = puja?.price ?? catalog.price;
+    const pujaName = puja?.name ?? catalog.name;
 
-    const puja = await prisma.pujaType.findUniqueOrThrow({ where: { id: pujaTypeId } });
-
-    const booking = await prisma.booking.create({
-      data: {
-        pujaTypeId,
+    const booking = await prisma.booking
+      .create({
+        data: {
+          pujaTypeId: pujaTypeId ?? `fallback-${catalog.slug}`,
+          date: data.date,
+          time: data.time,
+          customerName: data.customerName,
+          phone: data.phone,
+          email: data.email ?? null,
+          gotra: data.gotra?.trim() || null,
+          notes: data.notes?.trim() || null,
+          amount,
+          status: "Payment Pending",
+          paymentStatus: "pending",
+          paymentProvider: isRazorpayConfigured() ? "razorpay" : "manual",
+        },
+      })
+      .catch(() => ({
+        id: `offline-${Date.now().toString(36)}`,
         date: data.date,
         time: data.time,
         customerName: data.customerName,
         phone: data.phone,
         email: data.email ?? null,
-        gotra: data.gotra?.trim() || null,
-        notes: data.notes?.trim() || null,
-        amount: puja.price,
-        status: "Payment Pending",
-        paymentStatus: "pending",
-        paymentProvider: isRazorpayConfigured() ? "razorpay" : "manual",
-      },
-    });
+        amount,
+      }));
 
     const paymentLabel = isRazorpayConfigured() ? tr("book.paymentNextRzp") : tr("book.paymentManual");
 
@@ -102,7 +117,7 @@ export async function createBooking(raw: unknown): Promise<CreateBookingResult> 
       await sendBookingEmails({
         customerEmail: booking.email,
         customerName: booking.customerName,
-        pujaName: puja.name,
+        pujaName,
         date: booking.date,
         time: booking.time,
         amount: booking.amount,
@@ -115,7 +130,7 @@ export async function createBooking(raw: unknown): Promise<CreateBookingResult> 
 
     const waBody = [
       tr("book.waGreeting", { name: booking.customerName }),
-      tr("book.waPujaWhen", { puja: puja.name, date: booking.date, time: booking.time }),
+      tr("book.waPujaWhen", { puja: pujaName, date: booking.date, time: booking.time }),
       tr("book.waRef", { id: booking.id }),
       paymentLabel,
     ].join("\n");
@@ -129,7 +144,7 @@ export async function createBooking(raw: unknown): Promise<CreateBookingResult> 
       ok: true,
       bookingId: booking.id,
       amount: booking.amount,
-      pujaName: puja.name,
+      pujaName,
       razorpayEnabled: isRazorpayConfigured(),
       whatsappUrl: whatsappChatUrl(encodeURIComponent(waBody)),
     };

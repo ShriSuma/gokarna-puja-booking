@@ -1,13 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useI18n } from "@/lib/i18n";
 
 export default function AdminLoginPage() {
-  const router = useRouter();
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const { t } = useI18n();
@@ -27,8 +25,8 @@ export default function AdminLoginPage() {
         return;
       }
       toast.success("Welcome back");
-      router.replace("/admin/dashboard");
-      router.refresh();
+      // Use a full navigation to ensure auth cookie is included on the next request.
+      window.location.assign("/admin/dashboard");
     } finally {
       setLoading(false);
     }

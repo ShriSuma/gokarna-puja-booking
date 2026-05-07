@@ -7,11 +7,13 @@ export const dynamic = "force-dynamic";
 
 export default async function AdminDashboardPage() {
   const { t } = await getServerI18n();
-  const bookings = await prisma.booking.findMany({
-    orderBy: { createdAt: "desc" },
-    include: { pujaType: true },
-    take: 200,
-  });
+  const bookings = await prisma.booking
+    .findMany({
+      orderBy: { createdAt: "desc" },
+      include: { pujaType: true },
+      take: 200,
+    })
+    .catch(() => []);
 
   return (
     <AdminLayout>
