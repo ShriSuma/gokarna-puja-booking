@@ -88,8 +88,8 @@ export function HomeHero() {
         >
           <div className="relative h-64 w-full mb-6 overflow-hidden rounded-xl">
             <img 
-              src="/owner/hero-abisheka.png" 
-              alt="Gokarna Temple" 
+              src="/images/atmalinga-hero.png" 
+              alt="Gokarna Atmalinga" 
               className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
