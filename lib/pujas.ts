@@ -58,7 +58,7 @@ export async function listActivePujas(locale?: Locale): Promise<PujaListItem[]> 
             : (tr0?.shortDescription || pack?.shortDescription || r.shortDescription),
           price: r.price,
           durationMinutes: r.durationMinutes,
-          coverImageSrc: r.media[0]?.path ?? null,
+          coverImageSrc: r.media[0]?.path ?? `/images/pujas/${r.slug}.png`,
           popupEmotional: prefer && pack?.story ? pack.story : (tr0?.story || pack?.story || undefined),
           popupRequirements: prefer && pack?.requirements
             ? pack.requirements
@@ -84,6 +84,7 @@ export async function listActivePujas(locale?: Locale): Promise<PujaListItem[]> 
       popupEmotional: prefer && pack?.story ? pack.story : p.story,
       popupRequirements: prefer && pack?.requirements ? pack.requirements : p.preparation,
       popupBenefits: prefer && pack?.benefits ? pack.benefits : p.significance.slice(0, 280),
+      coverImageSrc: `/images/pujas/${p.slug}.png`,
     };
   });
 }

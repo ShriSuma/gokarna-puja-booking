@@ -26,22 +26,13 @@ export default async function HomePage() {
         </ScrollReveal>
         <div className="mt-8 grid gap-8 md:grid-cols-3 font-body text-lg leading-relaxed text-ink/85">
           <ScrollReveal delay={0.04}>
-            <p>
-              Gokarna’s shoreline has carried prayers for centuries. The air itself seems slower here—made for
-              remembrance rather than hurry.
-            </p>
+            <p>{t("home.why1")}</p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <p>
-              We honour both scripture and the living family before us: clear instructions, gentle pacing, and space for
-              tears if they come.
-            </p>
+            <p>{t("home.why2")}</p>
           </ScrollReveal>
           <ScrollReveal delay={0.16}>
-            <p>
-              Whether you arrive for piṇḍa, tarpana, or a guided remedial rite, you are welcomed as kin—not as a
-              transaction.
-            </p>
+            <p>{t("home.why3")}</p>
           </ScrollReveal>
         </div>
       </section>

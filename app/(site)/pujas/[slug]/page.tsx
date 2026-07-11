@@ -30,11 +30,6 @@ export default async function PujaDetailPage(props: Props) {
   if (!puja) notFound();
 
   const gallery = await getPujaGalleryImages(slug);
-  const price = new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 0,
-  }).format(puja.price);
 
   return (
     <div className="relative">
@@ -47,13 +42,6 @@ export default async function PujaDetailPage(props: Props) {
         </p>
         <h1 className="mt-3 font-display text-4xl text-maroon md:text-5xl">{puja.name}</h1>
         <p className="mt-4 font-body text-xl text-ink/85">{puja.shortDescription}</p>
-        <div className="mt-6 flex flex-wrap gap-4 font-body text-lg text-ink/75">
-          <span>{price}</span>
-          <span aria-hidden>·</span>
-          <span>
-            {puja.durationMinutes} {t("pujaDetail.minutesShort")}
-          </span>
-        </div>
         <div className="mt-10 flex flex-wrap gap-3">
           <ButtonLink href={`/book?puja=${encodeURIComponent(puja.slug)}`}>{t("cta.bookPuja")}</ButtonLink>
           <ButtonLink href="/contact" variant="secondary">

@@ -24,12 +24,6 @@ export function PujaCard({ puja, index = 0 }: { puja: PujaListItem; index?: numb
   const cover = puja.coverImageSrc || "/placeholders/temple-arch.svg";
   const imgUnopt = Boolean(puja.coverImageSrc?.startsWith("/uploads"));
 
-  const price = new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 0,
-  }).format(puja.price);
-
   return (
     <>
     <motion.button
@@ -50,13 +44,6 @@ export function PujaCard({ puja, index = 0 }: { puja: PujaListItem; index?: numb
         </span>
       </h3>
       <p className="mt-3 font-body text-lg leading-relaxed text-ink/85">{puja.shortDescription}</p>
-      <div className="mt-4 flex flex-wrap items-center gap-3 font-body text-base text-ink/70">
-        <span>{price}</span>
-        <span aria-hidden>·</span>
-        <span>
-          {puja.durationMinutes} {t("pujaDetail.minutesShort")}
-        </span>
-      </div>
       <span className="mt-5 inline-flex rounded-md border border-maroon/25 px-4 py-2 font-body text-maroon transition group-hover:border-maroon group-hover:bg-sandstone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon">
         {t("cta.bookPuja")}
       </span>
