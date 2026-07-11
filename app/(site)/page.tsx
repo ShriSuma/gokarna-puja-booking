@@ -44,7 +44,7 @@ export default async function HomePage() {
               <div>
                 <h2 className="font-display text-4xl text-maroon">{t("home.featured")}</h2>
                 <p className="mt-2 max-w-2xl font-body text-lg text-ink/80">
-                  Begin with what calls you—each listing includes guidance, duration, and what to expect.
+                  {t("home.featuredDesc")}
                 </p>
               </div>
             </ScrollReveal>
@@ -71,14 +71,13 @@ export default async function HomePage() {
 
       <section className="border-t border-maroon/10 bg-white/60 py-16 md:py-20">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-4 md:flex-row">
-          <OwnerPortrait alt={`${siteConfig.ownerName}, ${siteConfig.ownerTitle}`} />
+          <OwnerPortrait alt={`${t("home.ownerName")}, ${siteConfig.ownerTitle}`} />
           <ScrollReveal>
             <div className="flex-1">
               <h2 className="font-display text-4xl text-maroon">
-                {t("home.meet")} {siteConfig.ownerName}
+                {t("home.ownerName")}
               </h2>
-              <p className="mt-2 font-body text-xl text-brass">{siteConfig.ownerTitle}</p>
-              <p className="mt-4 font-body text-lg leading-relaxed text-ink/85">{siteConfig.ownerBio}</p>
+              <p className="mt-4 font-body text-lg leading-relaxed text-ink/85">{t("home.ownerBio")}</p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <ButtonLink href="/book">Book a conversation</ButtonLink>
                 <ButtonLink href="/contact" variant="secondary">

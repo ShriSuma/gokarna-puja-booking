@@ -24,7 +24,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-maroon/10 bg-parchment/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:py-4">
-        <Link href="/" className="group flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon rounded-md">
+        <Link href="/" title="Ganapati Maarigoli" className="group flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon rounded-md">
           <span className="font-display text-xl text-maroon transition group-hover:text-brass md:text-2xl">
             {siteConfig.siteName}
           </span>

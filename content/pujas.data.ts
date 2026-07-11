@@ -17,39 +17,6 @@ export type PujaContent = {
 
 export const pujasData: PujaContent[] = [
   {
-    slug: "pitru-daan",
-    category: "PITRI_KARYA",
-    name: "Pitru Daan",
-    shortDescription:
-      "Honouring ancestors with offerings of faith beside the sacred waters.",
-    price: 5100,
-    durationMinutes: 120,
-    significance:
-      "Pitru Daan strengthens the connection between generations, offering gratitude and peace to those who came before us. In Gokarna, this rite is traditionally performed with deep attention to mantra and sequence.",
-    whoShouldDo:
-      "Families observing annual śrāddha, those guided by astrological counsel, or anyone seeking to honour parents and lineage with a full ceremonial offering.",
-    included: [
-      "Personalised sankalpa",
-      "Traditional offerings and materials",
-      "Guided participation with clear instructions",
-      "Recorded checklist for preparatory fasts or purity notes (as applicable)",
-    ],
-    preparation:
-      "Wear simple, clean traditional attire. Bring family names and gotra if known. Avoid heavy meals before the ritual; we will confirm exact guidance when you book.",
-    story:
-      "The wind from the Arabian Sea carries the scent of camphor and wet sand. As each mantra rises, it feels less like a performance and more like a quiet conversation across time—between you, your ancestors, and the stillness that holds you both.",
-    longDescriptionMarkdown: `## Pitru Daan in Gokarna
-
-**Pitru Daan** is offered with full **Vedic procedure**, appropriate **mantras**, and calm explanation so every family member can participate with confidence.
-
-### What to expect
-- Sankalpa with your **family lineage**
-- Traditional **bali and offering** sequences
-- Time for **silent prayer** and **tarpana**-style offerings as suited to your case
-
-We keep the pace unhurried so the experience feels **grounded**, not rushed.`,
-  },
-  {
     slug: "pinda-pradhan",
     category: "PITRI_KARYA",
     name: "Pinda Pradhan",

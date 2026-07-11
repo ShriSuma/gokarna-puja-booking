@@ -36,17 +36,31 @@ export function PujaCard({ puja, index = 0 }: { puja: PujaListItem; index?: numb
       transition={{ delay: index * 0.06, duration: 0.45 }}
       style={{ transformStyle: "preserve-3d", perspective: 900 }}
       onClick={() => setOpen(true)}
-      className="puja-card group temple-frame relative rounded-xl bg-white/70 p-6 backdrop-blur-sm transition-colors duration-200 hover:border-maroon/25 hover:bg-white hover:shadow-lg"
+      className="puja-card group temple-frame relative rounded-xl bg-white/70 p-5 backdrop-blur-sm transition-all duration-300 hover:border-maroon/25 hover:bg-white hover:shadow-xl text-left flex flex-col h-full"
     >
+      <div className="relative h-48 w-full mb-5 overflow-hidden rounded-lg">
+        <Image 
+          src={cover} 
+          alt={puja.name}
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          unoptimized={imgUnopt}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-maroon/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      </div>
       <h3 className="font-display text-2xl text-maroon group-hover:text-brass transition-colors">
         <span className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon rounded-sm">
           {puja.name}
         </span>
       </h3>
-      <p className="mt-3 font-body text-lg leading-relaxed text-ink/85">{puja.shortDescription}</p>
-      <span className="mt-5 inline-flex rounded-md border border-maroon/25 px-4 py-2 font-body text-maroon transition group-hover:border-maroon group-hover:bg-sandstone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon">
-        {t("cta.bookPuja")}
-      </span>
+      <p className="mt-3 font-body text-base leading-relaxed text-ink/85 flex-grow line-clamp-3">
+        {emotional}
+      </p>
+      <div className="mt-5">
+        <span className="inline-flex rounded-md border border-maroon/25 px-4 py-2 font-body text-maroon transition group-hover:border-maroon group-hover:bg-sandstone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon">
+          {t("cta.bookPuja")}
+        </span>
+      </div>
     </motion.button>
     <AnimatePresence>
       {open && (

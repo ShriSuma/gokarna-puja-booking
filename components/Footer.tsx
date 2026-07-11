@@ -19,7 +19,12 @@ export function Footer() {
         <div className="font-body text-lg">
           <p className="font-semibold text-maroon">{t("footer.visit")}</p>
           <p className="mt-2 text-ink/85">{siteConfig.address}</p>
-          <p className="mt-2">
+          <p className="mt-1">
+            <a href={siteConfig.mapLink} target="_blank" rel="noreferrer" className="text-maroon text-sm hover:underline font-medium">
+              Get Directions →
+            </a>
+          </p>
+          <p className="mt-3">
             <a className="text-maroon hover:underline" href={`tel:${siteConfig.ownerPhone}`}>
               {siteConfig.ownerPhone}
             </a>

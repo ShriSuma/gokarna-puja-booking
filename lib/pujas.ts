@@ -44,7 +44,9 @@ export async function listActivePujas(locale?: Locale): Promise<PujaListItem[]> 
       },
     });
     if (rows.length > 0) {
-      return rows.map((r) => {
+      return rows
+        .filter((r) => r.slug !== "pitru-daan")
+        .map((r) => {
         const tr0 = r.translations[0];
         const pack = getPujaPack(r.slug, language);
         const prefer = language !== "en" && pack;

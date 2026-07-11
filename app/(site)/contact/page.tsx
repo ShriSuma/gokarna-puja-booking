@@ -40,6 +40,9 @@ export default async function ContactPage() {
             <div>
               <h2 className="font-display text-2xl text-maroon">{t("contact.address")}</h2>
               <p className="mt-2">{siteConfig.address}</p>
+              <a href={siteConfig.mapLink} target="_blank" rel="noreferrer" className="mt-2 inline-block text-maroon hover:underline font-medium">
+                Get Directions →
+              </a>
             </div>
             <a
               href={`https://wa.me/${wa}`}

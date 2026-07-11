@@ -84,15 +84,25 @@ export function HomeHero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.15 }}
           style={{ x: cardX, y: cardY }}
-          className="temple-frame relative flex-1 rounded-2xl bg-white/70 p-8 backdrop-blur"
+          className="temple-frame relative flex-1 rounded-2xl bg-white/70 p-6 backdrop-blur flex flex-col justify-between"
         >
-          <div className="font-display text-5xl text-maroon/15 select-none" aria-hidden>
-            ॐ
+          <div className="relative h-64 w-full mb-6 overflow-hidden rounded-xl">
+            <img 
+              src="/owner/hero-abisheka.png" 
+              alt="Gokarna Temple" 
+              className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+            <div className="absolute bottom-4 left-4 font-display text-4xl text-white/20 select-none" aria-hidden>
+              ॐ
+            </div>
           </div>
-          <p className="mt-4 font-body text-2xl leading-relaxed text-maroon">
-            “{t("home.heroQuote")}”
-          </p>
-          <p className="mt-4 font-body text-lg text-ink/75">— {t("home.heroNote")}</p>
+          <div>
+            <p className="font-body text-xl leading-relaxed text-maroon italic">
+              “{t("home.heroQuote")}”
+            </p>
+            <p className="mt-3 font-body text-base text-ink/75 font-semibold">— {t("home.heroNote")}</p>
+          </div>
         </motion.div>
       </div>
     </section>
