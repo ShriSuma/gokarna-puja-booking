@@ -5,9 +5,9 @@ export const siteConfig = {
   ownerTitle: "Priest & ritual guide",
   ownerBio:
     "With years of guiding families through śrāddha, piṇḍa, and remedial rites in Gokarna, we hold space for ancestors, healing, and peace. Every ceremony is offered with care, clarity, and devotion.",
-  ownerPhone: "+91 98765 43210",
-  ownerEmail: "hello@gokarnapuja.example",
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "919876543210",
+  ownerPhone: "07892676490",
+  ownerEmail: "ranganathmarigoli@gmail.com",
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "9107892676490",
   address:
     "Near Mahābaléśvara Temple area, Gokarna, Karnataka — full address to be updated",
   mapEmbedUrl:

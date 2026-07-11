@@ -45,5 +45,18 @@ export async function POST(req: Request) {
     paymentLabel: "Paid online (Razorpay)",
   });
 
+  const { trySendWhatsAppApi, buildBookingWhatsAppMessage } = await import("@/lib/whatsapp");
+  await trySendWhatsAppApi(
+    "9107892676490", 
+    buildBookingWhatsAppMessage({
+      name: booking.customerName,
+      puja: booking.pujaType.name,
+      date: booking.date,
+      time: booking.time,
+      bookingId: booking.id,
+      payment: "Paid online (Razorpay)"
+    })
+  );
+
   return NextResponse.json({ ok: true });
 }
