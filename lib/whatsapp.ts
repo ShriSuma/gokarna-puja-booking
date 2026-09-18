@@ -1,8 +1,22 @@
 import { siteConfig } from "@/content/site.config";
+import type { Locale } from "@/lib/i18n/messages";
+import { messages } from "@/lib/i18n/messages";
 
 export function waNumberDigits(): string {
-  const n = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? siteConfig.whatsappNumber;
-  return String(n).replace(/\D/g, "");
+  const raw = String(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? siteConfig.whatsappNumber).replace(/\D/g, "");
+  // If format is like 9107892676490 (13 digits with 91 followed by trunk zero)
+  if (raw.startsWith("910") && raw.length === 13) {
+    return "91" + raw.slice(3);
+  }
+  // If format has single trunk zero e.g. 07892676490 (11 digits)
+  if (raw.startsWith("0") && raw.length === 11) {
+    return "91" + raw.slice(1);
+  }
+  // If 10 digits standard mobile number
+  if (raw.length === 10) {
+    return "91" + raw;
+  }
+  return raw;
 }
 
 export function buildBookingWhatsAppMessage(parts: {
@@ -27,6 +41,12 @@ export function buildBookingWhatsAppMessage(parts: {
 
 export function whatsappChatUrl(prefill: string): string {
   return `https://wa.me/${waNumberDigits()}?text=${prefill}`;
+}
+
+export function getPitruPakshaWhatsAppUrl(locale: Locale = "en"): string {
+  const langMessages = messages[locale] || messages.en;
+  const prefill = langMessages.contact?.whatsappPrefill || messages.en.contact.whatsappPrefill;
+  return whatsappChatUrl(encodeURIComponent(prefill));
 }
 
 /** Optional Cloud API — fails soft if not configured */

@@ -50,13 +50,13 @@ Piṇḍa Pradhan is among the most **compassionate** offerings we facilitate. W
   {
     slug: "narayana-bali",
     category: "PITRI_KARYA",
-    name: "Narayana Bali",
+    name: "Narayana Bali & Pitru Dosha Nivarana Pooja",
     shortDescription:
-      "Remedial rite for unsettled energies, unexplained obstacles, and ancestral peace.",
+      "Sacred Vedic remedial rite for Pitru Dosha Nivarana, ancestral peace, and liberation in Gokarna.",
     price: 9100,
     durationMinutes: 180,
     significance:
-      "Narayana Bali is often recommended when there are persistent difficulties, dreams, or family patterns that suggest a need for deeper ancestral appeasement and release.",
+      "Narayana Bali is often recommended when there are persistent difficulties, Pitru Dosha, dreams, or family patterns that suggest a need for deeper ancestral appeasement and release.",
     whoShouldDo:
       "Those advised by jyotiṣa or family āchārya, or families sensing a need for remedial peace after loss or disruption.",
     included: [

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { TempleBackdrop } from "@/components/TempleBackdrop";
 import { ButtonLink } from "@/components/ButtonLink";
@@ -5,10 +6,22 @@ import { PujaCard } from "@/components/PujaCard";
 import { OwnerPortrait } from "@/components/OwnerPortrait";
 import { HomeHero } from "@/components/home/HomeHero";
 import { TestimonialGrid } from "@/components/home/TestimonialGrid";
+import { FaqSection } from "@/components/home/FaqSection";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { siteConfig } from "@/content/site.config";
 import { listActivePujas } from "@/lib/pujas";
 import { getServerI18n } from "@/lib/i18n/server";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Gokarna Narayana Bali & Pitru Dosha Nivarana Pooja | Pandit Ganapati",
+  },
+  description: "Book authentic Narayana Bali & Pitru Dosha Nivarana Pooja in Gokarna with Vedic Pandit Ganapati Maarigoli near Mahabaleshwara Temple. Mahalaya Pitru Paksha, Pinda Pradhan, Tithi Shradh, & Tripindi. Call 07892676490.",
+  openGraph: {
+    title: "Gokarna Narayana Bali & Pitru Dosha Nivarana Pooja | Pandit Ganapati Maarigoli",
+    description: "Book authentic Narayana Bali & Pitru Dosha Nivarana Pooja in holy Gokarna. Call or WhatsApp Pandit Ganapati Maarigoli (07892676490) for muhurtha dates.",
+  },
+};
 
 export default async function HomePage() {
   const { t, locale } = await getServerI18n();
@@ -68,6 +81,8 @@ export default async function HomePage() {
         </ScrollReveal>
         <TestimonialGrid items={siteConfig.testimonials} />
       </section>
+
+      <FaqSection />
 
       <section className="border-t border-maroon/10 bg-white/60 py-16 md:py-20">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-4 md:flex-row">

@@ -4,6 +4,8 @@ import { Footer } from "@/components/Footer";
 import { Providers } from "@/app/providers";
 import { languageCookie, normalizeLocale } from "@/lib/i18n/shared";
 import { getServerI18n } from "@/lib/i18n/server";
+import { PitruPakshaBanner } from "@/components/PitruPakshaBanner";
+import { FloatingContactWidgets } from "@/components/FloatingContactWidgets";
 
 export default async function SiteLayout({ children }: { children: React.ReactNode }) {
   const cookieStore = await cookies();
@@ -18,21 +20,17 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
         {t("nav.skipToContent")}
       </a>
       
-      {/* Contact Marquee */}
-      <div className="w-full bg-maroon text-parchment py-2 overflow-hidden relative z-50 shadow-md">
-        <div className="whitespace-nowrap animate-marquee flex items-center gap-12 font-body text-sm tracking-wide">
-          <span>For bookings and inquiries, contact us at: <strong>07892676490</strong></span>
-          <span>For bookings and inquiries, contact us at: <strong>07892676490</strong></span>
-          <span>For bookings and inquiries, contact us at: <strong>07892676490</strong></span>
-          <span>For bookings and inquiries, contact us at: <strong>07892676490</strong></span>
-        </div>
-      </div>
+      {/* Rolling Pitru Paksha Announcement Banner */}
+      <PitruPakshaBanner />
 
       <Navbar />
-      <main id="main" className="flex-1">
+      <main id="main" className="flex-1 pb-16 md:pb-0">
         {children}
       </main>
       <Footer />
+
+      {/* Popping Floating WhatsApp and Call Action Widgets */}
+      <FloatingContactWidgets />
     </Providers>
   );
 }
