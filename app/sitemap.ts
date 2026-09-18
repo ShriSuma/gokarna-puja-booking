@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { prisma } from "@/lib/db";
 import { pujasData } from "@/content/pujas.data";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.bookgokarnapooja.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let dbPujas: { slug: string }[] = [];
