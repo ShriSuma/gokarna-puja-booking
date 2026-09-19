@@ -25,8 +25,8 @@ export function Footer() {
             </a>
           </p>
           <p className="mt-3">
-            <a className="text-maroon hover:underline" href={`tel:${siteConfig.ownerPhone}`}>
-              {siteConfig.ownerPhone}
+            <a className="text-maroon hover:underline inline-flex items-center gap-1.5 font-semibold" href={`tel:${siteConfig.ownerPhone}`}>
+              <span aria-hidden>📞</span> Call Panditji
             </a>
           </p>
           <p className="mt-1">

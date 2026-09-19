@@ -17,10 +17,10 @@ export const metadata: Metadata = {
   title: {
     absolute: "Gokarna Narayana Bali & Pitru Dosha Nivarana Pooja | Pandit Ganapati",
   },
-  description: "Book authentic Narayana Bali & Pitru Dosha Nivarana Pooja in Gokarna with Vedic Pandit Ganapati Maarigoli near Mahabaleshwara Temple. Mahalaya Pitru Paksha, Pinda Pradhan, Tithi Shradh, & Tripindi. Call 07892676490.",
+  description: "Book authentic Narayana Bali & Pitru Dosha Nivarana Pooja in Gokarna with Vedic Pandit Ganapati Maarigoli near Mahabaleshwara Temple. Mahalaya Pitru Paksha, Pinda Pradhan, Tithi Shradh, & Tripindi. Call or WhatsApp for muhurtha.",
   openGraph: {
     title: "Gokarna Narayana Bali & Pitru Dosha Nivarana Pooja | Pandit Ganapati Maarigoli",
-    description: "Book authentic Narayana Bali & Pitru Dosha Nivarana Pooja in holy Gokarna. Call or WhatsApp Pandit Ganapati Maarigoli (07892676490) for muhurtha dates.",
+    description: "Book authentic Narayana Bali & Pitru Dosha Nivarana Pooja in holy Gokarna. Call or WhatsApp Pandit Ganapati Maarigoli for muhurtha dates.",
   },
 };
 

@@ -32,7 +32,7 @@ export function trackGoogleAdsEvent(
  * Track Phone Call Click conversions across the site.
  * This signals to Google Ads that a high-intent client initiated a phone call.
  */
-export function trackCallConversion(phone: string = "07892676490") {
+export function trackCallConversion(phone: string = "Panditji") {
   if (typeof window === "undefined" || typeof window.gtag !== "function") {
     return;
   }
@@ -41,13 +41,13 @@ export function trackCallConversion(phone: string = "07892676490") {
   window.gtag("event", "conversion", {
     send_to: GOOGLE_ADS_ID,
     event_category: "Contact",
-    event_label: `Phone: ${phone}`,
+    event_label: "Call Panditji",
   });
 
   // Google Analytics & Ads standard lead action
   window.gtag("event", "click_to_call", {
     event_category: "Lead",
-    event_label: phone,
+    event_label: "Call Panditji",
   });
 
   window.gtag("event", "generate_lead", {

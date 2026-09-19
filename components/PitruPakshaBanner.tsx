@@ -9,7 +9,7 @@ export function PitruPakshaBanner() {
   const whatsappUrl = getPitruPakshaWhatsAppUrl(locale);
   const announcementText =
     t("banner.pitruAnnouncement") ||
-    "🕉️ Mahalaya Pitru Paksha & Narayana Bali Puja Bookings Now Open! Pre-book sacred ancestral rites in Gokarna • Guided by Pandit Ganapati Maarigoli • Call: 07892676490";
+    "🕉️ Mahalaya Pitru Paksha & Narayana Bali Puja Bookings Now Open! Pre-book sacred ancestral rites in Gokarna • Guided by Pandit Ganapati Maarigoli • Call or WhatsApp for Muhurtha";
 
   return (
     <div 
@@ -54,14 +54,14 @@ export function PitruPakshaBanner() {
           <a
             href={`tel:${siteConfig.ownerPhone}`}
             className="animate-dance-3d inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brass-light via-brass to-brass-light text-maroon-deep font-display font-extrabold text-xs sm:text-sm md:text-base px-3.5 sm:px-5 py-2 sm:py-2.5 shadow-2xl border-2 border-white/80 hover:border-white transition-transform active:scale-95 cursor-pointer"
-            title={`${t("contact.pitruCallTooltip") || "Call Panditji"}: ${siteConfig.ownerPhone}`}
+            title={t("contact.pitruCallTooltip") || "Call Panditji"}
           >
             <span className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-maroon text-parchment shadow-inner">
               <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
             </span>
-            <span className="tracking-wide">{siteConfig.ownerPhone}</span>
+            <span className="tracking-wide">{t("contact.pitruCallTooltip") || "Call Panditji"}</span>
           </a>
 
           {/* Big 3D Dancing WhatsApp Button */}

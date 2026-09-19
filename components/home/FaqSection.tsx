@@ -19,7 +19,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "How do I check muhurtha dates and book with Pandit Ganapati Maarigoli?",
-    a: "You can directly call 07892676490 or message on WhatsApp. Guruji evaluates your family gotra, tithi, and travel schedule to suggest the most auspicious muhurtha. All puja samagri, homa requirements, and temple coordination are managed for you.",
+    a: "You can directly call Guruji or message on WhatsApp. Guruji evaluates your family gotra, tithi, and travel schedule to suggest the most auspicious muhurtha. All puja samagri, homa requirements, and temple coordination are managed for you.",
   },
   {
     q: "What items and dress code are required from devotees?",
@@ -111,7 +111,7 @@ export function FaqSection() {
               href="tel:07892676490"
               className="inline-flex items-center gap-1.5 rounded-lg bg-maroon px-4 py-2 text-sm font-semibold text-gold-100 shadow transition-all hover:bg-maroon-700"
             >
-              📞 Call 07892676490
+              📞 Call Panditji
             </a>
             <a
               href="https://wa.me/917892676490?text=Namaskara%20Guruji%2C%20I%20have%20questions%20regarding%20puja%20muhurtha%20in%20Gokarna."

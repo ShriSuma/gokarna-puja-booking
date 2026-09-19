@@ -11,7 +11,7 @@ export function FloatingContactWidgets() {
   const tooltipText = t("contact.pitruWhatsappTooltip") || "Pitru Paksha Inquiry";
   const descText = t("contact.pitruWhatsappDesc") || "Chat on WhatsApp for rituals & dates";
   const callTooltip = t("contact.pitruCallTooltip") || "Call Panditji";
-  const callNowText = t("contact.callNow") || `Call: ${siteConfig.ownerPhone}`;
+  const callNowText = t("contact.callNow") || "Call Panditji";
 
   return (
     <>
@@ -32,7 +32,7 @@ export function FloatingContactWidgets() {
             href={`tel:${siteConfig.ownerPhone}`}
             className="animate-dance-3d flex items-center gap-3.5 rounded-2xl bg-gradient-to-r from-brass-light via-brass to-brass-light text-maroon-deep px-5 py-3.5 shadow-2xl border-2 border-white/90 hover:border-white transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
             aria-label={callNowText}
-            title={`${callTooltip}: ${siteConfig.ownerPhone}`}
+            title={callTooltip}
           >
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-maroon text-parchment border border-brass/50 shadow-inner">
               <svg className="h-6 w-6 text-brass-light animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -45,7 +45,7 @@ export function FloatingContactWidgets() {
                 {callTooltip}
               </span>
               <span className="font-display font-extrabold text-base md:text-lg tracking-wide text-maroon-deep">
-                {siteConfig.ownerPhone}
+                {callTooltip}
               </span>
             </div>
           </a>

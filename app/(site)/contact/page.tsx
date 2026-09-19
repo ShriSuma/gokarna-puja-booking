@@ -27,8 +27,8 @@ export default async function ContactPage() {
           <div className="space-y-6 font-body text-lg text-ink/85">
             <div>
               <h2 className="font-display text-2xl text-maroon">{t("contact.phone")}</h2>
-              <a className="mt-2 inline-block text-maroon hover:underline" href={`tel:${siteConfig.ownerPhone}`}>
-                {siteConfig.ownerPhone}
+              <a className="mt-2 inline-flex items-center gap-2 font-semibold text-maroon hover:underline" href={`tel:${siteConfig.ownerPhone}`}>
+                <span aria-hidden>📞</span> {t("contact.callNow") || "Call Panditji"}
               </a>
             </div>
             <div>

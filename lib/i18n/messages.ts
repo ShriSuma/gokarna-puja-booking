@@ -125,7 +125,7 @@ export const messages = {
       waRef: "Reference: {{id}}",
     },
     banner: {
-      pitruAnnouncement: "🕉️ Mahalaya Pitru Paksha & Narayana Bali Puja Bookings Now Open! Pre-book sacred ancestral rites in Gokarna • Guided by Pandit Ganapati Maarigoli • Call: 07892676490",
+      pitruAnnouncement: "🕉️ Mahalaya Pitru Paksha & Narayana Bali Puja Bookings Now Open! Pre-book sacred ancestral rites in Gokarna • Guided by Pandit Ganapati Maarigoli • Call or WhatsApp for Muhurtha",
       pitruPill: "Pitru Paksha Bookings Open",
     },
     contact: {
@@ -141,7 +141,7 @@ export const messages = {
       pitruWhatsappDesc: "Chat on WhatsApp for rituals & dates",
       pitruCallTooltip: "Call Panditji",
       pitruBadge: "Pitru Paksha Open",
-      callNow: "Call: 07892676490",
+      callNow: "Call Panditji",
       whatsappInquiry: "WhatsApp Inquiry",
       whatsappPrefill: "Namaste Panditji, I would like to inquire about Mahalaya Pitru Paksha, Narayana Bali, and Shraddha / Tarpana rituals in Gokarna. Please share the details and available auspicious muhurtha dates.",
     },
@@ -423,7 +423,7 @@ export const messages = {
       waRef: "संदर्भ: {{id}}",
     },
     banner: {
-      pitruAnnouncement: "🕉️ महालय पितृ पक्ष एवं नारायण बलि पूजा बुकिंग शुरू हो चुकी है! गोकर्ण में अपने पितरों की शांति व तृप्ति हेतु अग्रिम बुकिंग करें • संपर्क: 07892676490",
+      pitruAnnouncement: "🕉️ महालय पितृ पक्ष एवं नारायण बलि पूजा बुकिंग शुरू हो चुकी है! गोकर्ण में अपने पितरों की शांति व तृप्ति हेतु अग्रिम बुकिंग करें • मुहूर्त के लिए कॉल या व्हाट्सऐप करें",
       pitruPill: "पितृ पक्ष बुकिंग शुरू",
     },
     contact: {
@@ -439,7 +439,7 @@ export const messages = {
       pitruWhatsappDesc: "पूजा व मुहूर्त के लिए व्हाट्सऐप पर चैट करें",
       pitruCallTooltip: "पंडित जी को कॉल करें",
       pitruBadge: "पितृ पक्ष बुकिंग जारी",
-      callNow: "कॉल करें: 07892676490",
+      callNow: "पंडित जी को कॉल करें",
       whatsappInquiry: "व्हाट्सऐप पूछताछ",
       whatsappPrefill: "नमस्ते पंडित जी, मैं गोकर्ण में महालय पितृ पक्ष, नारायण बलि और श्राद्ध / तर्पण पूजा के बारे में जानकारी प्राप्त करना चाहता/चाहती हूँ। कृपया संपूर्ण विधि और शुभ मुहूर्त की तिथियाँ साझा करें।",
     },
@@ -709,7 +709,7 @@ export const messages = {
       waRef: "సూచన: {{id}}",
     },
     banner: {
-      pitruAnnouncement: "🕉️ మహాలయ పితృ పక్షం & నారాయణ బలి పూజ బుకింగ్‌లు ప్రారంభమైనవి! గోకర్ణంలో పవిత్ర పితృ కార్యాలను ఇప్పుడే బుక్ చేసుకోండి • కాల్: 07892676490",
+      pitruAnnouncement: "🕉️ మహాలయ పితృ పక్షం & నారాయణ బలి పూజ బుకింగ్‌లు ప్రారంభమైనవి! గోకర్ణంలో పవిత్ర పితృ కార్యాలను ఇప్పుడే బుక్ చేసుకోండి • ముహూర్తం కోసం కాల్ లేదా వాట్సాప్ చేయండి",
       pitruPill: "పితృ పక్షం బుకింగ్‌లు ప్రారంభం",
     },
     contact: {
@@ -725,7 +725,7 @@ export const messages = {
       pitruWhatsappDesc: "పూజ మరియు ముహూర్తాల కోసం వాట్సాప్‌లో చాట్ చేయండి",
       pitruCallTooltip: "పండిట్ జీకి కాల్ చేయండి",
       pitruBadge: "పితృ పక్షం బుకింగ్స్",
-      callNow: "కాల్ చేయండి: 07892676490",
+      callNow: "పండిట్ జీకి కాల్ చేయండి",
       whatsappInquiry: "వాట్సాప్ విచారణ",
       whatsappPrefill: "నమస్కారం గురూజీ, గోకర్ణంలో మహాలయ పితృ పక్షం, నారాయణ బలి మరియు శ్రాద్ధ / తర్పణ పూజా విధానాల వివరాలు తెలుసుకోవాలనుకుంటున్నాను. దయచేసి వివరాలు మరియు శుభ ముహూర్తాల తేదీలను పంపగలరు.",
     },
@@ -995,7 +995,7 @@ export const messages = {
       waRef: "குறிப்பு: {{id}}",
     },
     banner: {
-      pitruAnnouncement: "🕉️ மஹாளய பித்ரு பக்ஷம் மற்றும் நாராயண பலி பூஜை முன்பதிவுகள் தொடங்கின! கோகர்ணத்தில் புனித பித்ரு காரியங்களை முன்பதிவு செய்யுங்கள் • அழைக்க: 07892676490",
+      pitruAnnouncement: "🕉️ மஹாளய பித்ரு பக்ஷம் மற்றும் நாராயண பலி பூஜை முன்பதிவுகள் தொடங்கின! கோகர்ணத்தில் புனித பித்ரு காரியங்களை முன்பதிவு செய்யுங்கள் • முகூர்த்தத்திற்கு அழைக்க அல்லது வாட்ஸ்அப் செய்யவும்",
       pitruPill: "பித்ரு பக்ஷம் முன்பதிவு தொடங்கியது",
     },
     contact: {
@@ -1011,7 +1011,7 @@ export const messages = {
       pitruWhatsappDesc: "பூஜை மற்றும் தேதிகளுக்கு வாட்ஸ்அப்பில் தொடர்பு கொள்ளவும்",
       pitruCallTooltip: "பண்டிட்ஜியை அழைக்கவும்",
       pitruBadge: "பித்ரு பக்ஷம் முன்பதிவு",
-      callNow: "அழைக்க: 07892676490",
+      callNow: "பண்டிட்ஜியை அழைக்கவும்",
       whatsappInquiry: "வாட்ஸ்அப் விசாரணை",
       whatsappPrefill: "வணக்கம் பண்டிட்ஜி, கோகர்ணத்தில் மஹாளய பித்ரு பக்ஷம், நாராயண பலி மற்றும் திதி / சிரார்த்த பூஜைகள் குறித்து விவரங்கள் அறிய விரும்புகிறேன். உகந்த தேதிகள் மற்றும் வழிகாட்டுதல்களை பகிரவும்.",
     },
@@ -1281,7 +1281,7 @@ export const messages = {
       waRef: "ಉಲ್ಲೇಖ: {{id}}",
     },
     banner: {
-      pitruAnnouncement: "🕉️ ಮಹಾಲಯ ಪಿತೃ ಪಕ್ಷ ಮತ್ತು ನಾರಾಯಣ ಬಲಿ ಪೂಜಾ ಬುಕಿಂಗ್ ಪ್ರಾರಂಭವಾಗಿದೆ! ಗೋಕರ್ಣದಲ್ಲಿ ಪಿತೃ ಕಾರ್ಯಗಳನ್ನು ಮುಂಚಿತವಾಗಿ ಕಾಯ್ದಿರಿಸಿ • ಪಂಡಿತ್ ಗಣಪತಿ ಮಾರಿಗೋಳಿ • ಕರೆ: 07892676490",
+      pitruAnnouncement: "🕉️ ಮಹಾಲಯ ಪಿತೃ ಪಕ್ಷ ಮತ್ತು ನಾರಾಯಣ ಬಲಿ ಪೂಜಾ ಬುಕಿಂಗ್ ಪ್ರಾರಂಭವಾಗಿದೆ! ಗೋಕರ್ಣದಲ್ಲಿ ಪಿತೃ ಕಾರ್ಯಗಳನ್ನು ಮುಂಚಿತವಾಗಿ ಕಾಯ್ದಿರಿಸಿ • ಪಂಡಿತ್ ಗಣಪತಿ ಮಾರಿಗೋಳಿ • ಮುಹೂರ್ತಕ್ಕಾಗಿ ಕರೆ ಅಥವಾ ವಾಟ್ಸಾಪ್ ಮಾಡಿ",
       pitruPill: "ಪಿತೃ ಪಕ್ಷ ಬುಕಿಂಗ್ ಪ್ರಾರಂಭ",
     },
     contact: {
@@ -1297,7 +1297,7 @@ export const messages = {
       pitruWhatsappDesc: "ಪೂಜೆ ಮತ್ತು ಮುಹೂರ್ತಕ್ಕಾಗಿ ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ಚಾಟ್ ಮಾಡಿ",
       pitruCallTooltip: "ಗುರೂಜಿಯವರಿಗೆ ಕರೆ ಮಾಡಿ",
       pitruBadge: "ಪಿತೃ ಪಕ್ಷ ಬುಕಿಂಗ್ ಆರಂಭ",
-      callNow: "ಕರೆ ಮಾಡಿ: 07892676490",
+      callNow: "ಗುರೂಜಿಯವರಿಗೆ ಕರೆ ಮಾಡಿ",
       whatsappInquiry: "ವಾಟ್ಸಾಪ್ ವಿಚಾರಣೆ",
       whatsappPrefill: "ನಮಸ್ಕಾರ ಗುರುಗಳೇ, ಗೋಕರ್ಣದಲ್ಲಿ ಮಹಾಲಯ ಪಿತೃ ಪಕ್ಷ, ನಾರಾಯಣ ಬಲಿ ಮತ್ತು ಶ್ರಾದ್ಧ / ತರ್ಪಣ ಪೂಜೆಗಳ ಬಗ್ಗೆ ವಿಚಾರಿಸಲು ಬಯಸುತ್ತೇನೆ. ದಯವಿಟ್ಟು ವಿವರಗಳು ಮತ್ತು ಲಭ್ಯವಿರುವ ಶುಭ ಮುಹೂರ್ತದ ದಿನಾಂಕಗಳನ್ನು ತಿಳಿಸಿ.",
     },

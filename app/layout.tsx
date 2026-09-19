@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     default: "Gokarna Narayana Bali & Pitru Dosha Nivarana Pooja | Pandit Ganapati Maarigoli",
     template: `%s | ${siteConfig.siteName}`,
   },
-  description: "Book authentic Narayana Bali & Pitru Dosha Nivarana Pooja in Gokarna with Vedic Pandit Ganapati Maarigoli near Mahabaleshwara Temple. Mahalaya Pitru Paksha, Pinda Pradhan, Tithi Shradh, & Tripindi. Call: 07892676490.",
+  description: "Book authentic Narayana Bali & Pitru Dosha Nivarana Pooja in Gokarna with Vedic Pandit Ganapati Maarigoli near Mahabaleshwara Temple. Mahalaya Pitru Paksha, Pinda Pradhan, Tithi Shradh, & Tripindi. Call or WhatsApp for Muhurtha.",
   keywords: [
     "Narayana Bali Gokarna",
     "Pitru Dosha Nivarana Pooja Gokarna",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Gokarna Narayana Bali & Pitru Dosha Nivarana Pooja | Pandit Ganapati Maarigoli",
-    description: "Book authentic Narayana Bali & Pitru Dosha Nivarana Pooja in Gokarna with Vedic Pandit Ganapati Maarigoli. Mahalaya Pitru Paksha, Pinda Pradhan, & Shradh. Call or WhatsApp: 07892676490.",
+    description: "Book authentic Narayana Bali & Pitru Dosha Nivarana Pooja in Gokarna with Vedic Pandit Ganapati Maarigoli. Mahalaya Pitru Paksha, Pinda Pradhan, & Shradh. Call or WhatsApp for Muhurtha.",
     url: siteUrl,
     siteName: siteConfig.siteName,
     images: [
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Gokarna Narayana Bali & Pitru Dosha Nivarana Pooja | Pandit Ganapati Maarigoli",
-    description: "Authentic Narayana Bali, Pitru Dosha Nivarana & Shradh rituals in sacred Gokarna with Pandit Ganapati Maarigoli. Call: 07892676490.",
+    description: "Authentic Narayana Bali, Pitru Dosha Nivarana & Shradh rituals in sacred Gokarna with Pandit Ganapati Maarigoli. Call or WhatsApp for Muhurtha.",
     images: [`${siteUrl}/images/pujas/narayana-bali.png`],
   },
   alternates: {
@@ -181,7 +181,7 @@ const structuredData = {
           "name": "How can I book Pitru Paksha and Narayana Bali puja in Gokarna?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "You can connect directly with Vedic Pandit Ganapati Maarigoli by calling 07892676490 or messaging on WhatsApp. We provide date selection (muhurtha), arrange all required samagri, and assist with family gotra sankalpa."
+            "text": "You can connect directly with Vedic Pandit Ganapati Maarigoli by calling or messaging on WhatsApp. We provide date selection (muhurtha), arrange all required samagri, and assist with family gotra sankalpa."
           }
         },
         {
