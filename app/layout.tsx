@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Noto_Serif_Devanagari } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/content/site.config";
 import { cookies } from "next/headers";
 import { languageCookie, normalizeLocale } from "@/lib/i18n/shared";
+import { GoogleAdsTracker } from "@/components/GoogleAdsTracker";
 
 const noto = Noto_Serif_Devanagari({
   subsets: ["latin", "devanagari"],
@@ -222,7 +224,26 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-parchment text-ink">{children}</body>
+      <body className="min-h-screen flex flex-col bg-parchment text-ink">
+        {/* Google Tag (gtag.js) for Google Ads */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18461450287"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18461450287');
+          `}
+        </Script>
+
+        {/* Global Google Ads Call & WhatsApp Event Tracker */}
+        <GoogleAdsTracker />
+
+        {children}
+      </body>
     </html>
   );
 }

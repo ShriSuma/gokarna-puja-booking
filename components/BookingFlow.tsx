@@ -15,6 +15,7 @@ import { isRazorpayConfigured } from "@/lib/razorpay";
 import { AvailabilityCalendar } from "@/components/AvailabilityCalendar";
 import { useI18n } from "@/lib/i18n";
 import { normalizeSlotTime } from "@/lib/slot-time";
+import { trackGoogleAdsEvent } from "@/lib/analytics";
 
 type FormValues = {
   pujaSlug: string;
@@ -179,6 +180,15 @@ export function BookingFlow({ pujas }: { pujas: PujaListItem[] }) {
       }
 
       toast.success(t("book.toastBookingSaved"));
+      trackGoogleAdsEvent("generate_lead", {
+        event_category: "Booking Saved",
+        event_label: values.pujaSlug,
+        value: 1.0,
+        currency: "INR",
+      });
+      trackGoogleAdsEvent("conversion", {
+        event_category: "Booking Saved",
+      });
 
       if (!res.razorpayEnabled) {
         finishFlow(res);

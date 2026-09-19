@@ -25,8 +25,23 @@ export function ContactForm() {
     setSending(true);
     try {
       const res = await submitContactForm(values);
-      if (res.ok) toast.success(t("contactToast.sent"));
-      else toast.message(t("contactToast.devLog"));
+      if (res.ok) {
+        toast.success(t("contactToast.sent"));
+        if (typeof window !== "undefined" && typeof window.gtag === "function") {
+          window.gtag("event", "generate_lead", {
+            event_category: "Contact Form",
+            event_label: values.name,
+            value: 1.0,
+            currency: "INR",
+          });
+          window.gtag("event", "conversion", {
+            send_to: "AW-18461450287",
+            event_category: "Contact Form",
+          });
+        }
+      } else {
+        toast.message(t("contactToast.devLog"));
+      }
       form.reset();
     } catch (e) {
       toast.error(e instanceof Error ? e.message : t("contactToast.sendFail"));
