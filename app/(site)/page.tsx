@@ -8,6 +8,7 @@ import { HomeHero } from "@/components/home/HomeHero";
 import { TestimonialGrid } from "@/components/home/TestimonialGrid";
 import { FaqSection } from "@/components/home/FaqSection";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { PujaVideoSection } from "@/components/PujaVideoSection";
 import { siteConfig } from "@/content/site.config";
 import { listActivePujas } from "@/lib/pujas";
 import { getServerI18n } from "@/lib/i18n/server";
@@ -80,6 +81,13 @@ export default async function HomePage() {
           <h2 className="font-display text-4xl text-maroon">{t("home.testimonials")}</h2>
         </ScrollReveal>
         <TestimonialGrid items={siteConfig.testimonials} />
+      </section>
+
+      {/* Authentic Gokarna Puja & Homa Video Section */}
+      <section className="mx-auto max-w-6xl px-4 py-6">
+        <ScrollReveal>
+          <PujaVideoSection />
+        </ScrollReveal>
       </section>
 
       <FaqSection />

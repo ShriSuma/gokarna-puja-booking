@@ -1,11 +1,12 @@
 import { TempleBackdrop } from "@/components/TempleBackdrop";
 import { GalleryGrid } from "@/components/GalleryGrid";
+import { PujaVideoSection } from "@/components/PujaVideoSection";
 import { getGeneralGalleryImages, hasAnyGalleryImages } from "@/lib/gallery";
 import { getServerI18n } from "@/lib/i18n/server";
 
 export const metadata = {
-  title: "Gallery",
-  description: "Moments from rituals in Gokarna—images appear automatically when you add them.",
+  title: "Gallery & Sacred Ritual Videos | Gokarna Pooja",
+  description: "Authentic moments and video footage from Narayana Bali, Homa, and Pitru rituals in Gokarna with Pandit Ganapati Maarigoli.",
 };
 
 export default async function GalleryPage() {
@@ -21,7 +22,12 @@ export default async function GalleryPage() {
         <p className="mt-4 max-w-2xl font-body text-xl text-ink/80">
           {any ? t("gallery.withPhotos") : t("gallery.emptyHint")}
         </p>
-        <div className="mt-10">
+
+        {/* Video of Sacred Rituals in Gokarna */}
+        <PujaVideoSection />
+
+        <div className="mt-12">
+          <h2 className="font-display text-3xl text-maroon mb-6">Sacred Ritual Photos</h2>
           <GalleryGrid items={items} emptyMessage={t("gallery.emptyGrid")} placeholderLabel={t("gallery.emptyGrid")} />
         </div>
       </section>
