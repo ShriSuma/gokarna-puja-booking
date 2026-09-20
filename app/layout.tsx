@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Inter, Noto_Serif_Devanagari } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/content/site.config";
@@ -223,27 +222,30 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        {/* Google Tag (gtag.js) for Google Ads */}
+        {/* eslint-disable-next-line @next/next/next-script-for-ga */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18461450287"
+        />
+        {/* eslint-disable-next-line @next/next/next-script-for-ga */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-18461450287');
+              gtag('event', 'conversion', {
+                'send_to': 'AW-18461450287/b-a3COulm_0cEK_AjeNE',
+                'value': 1.0,
+                'currency': 'INR'
+              });
+            `,
+          }}
+        />
       </head>
       <body className="min-h-screen flex flex-col bg-parchment text-ink">
-        {/* Google Tag (gtag.js) for Google Ads */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18461450287"
-          strategy="afterInteractive"
-        />
-        <Script id="google-ads-gtag" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-18461450287');
-            gtag('event', 'conversion', {
-              'send_to': 'AW-18461450287/b-a3COulm_0cEK_AjeNE',
-              'value': 1.0,
-              'currency': 'INR'
-            });
-          `}
-        </Script>
-
         {/* Global Google Ads Call & WhatsApp Event Tracker */}
         <GoogleAdsTracker />
 
