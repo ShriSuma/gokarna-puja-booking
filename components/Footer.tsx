@@ -24,11 +24,15 @@ export function Footer() {
               Get Directions →
             </a>
           </p>
-          <p className="mt-3">
-            <a className="text-maroon hover:underline inline-flex items-center gap-1.5 font-semibold" href={`tel:${siteConfig.ownerPhone}`}>
-              <span aria-hidden>📞</span> Call Panditji
+          <div className="mt-3 flex flex-col gap-1">
+            <span className="font-semibold text-maroon text-sm">Direct Phone / Call:</span>
+            <a className="text-maroon hover:underline inline-flex items-center gap-1.5 font-bold" href={`tel:${siteConfig.ownerPhone}`}>
+              <span aria-hidden>📞</span> +91 78926 76490 <span className="font-normal text-xs text-ink/70">(07892676490)</span>
             </a>
-          </p>
+            <a className="text-maroon/90 hover:underline inline-flex items-center gap-1.5 text-sm" href="tel:+917019089159">
+              <span aria-hidden>📞</span> Helpline: +91 70190 89159
+            </a>
+          </div>
           <p className="mt-1">
             <a className="text-maroon hover:underline" href={`mailto:${siteConfig.ownerEmail}`}>
               {siteConfig.ownerEmail}

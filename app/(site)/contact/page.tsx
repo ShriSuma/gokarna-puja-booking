@@ -27,9 +27,15 @@ export default async function ContactPage() {
           <div className="space-y-6 font-body text-lg text-ink/85">
             <div>
               <h2 className="font-display text-2xl text-maroon">{t("contact.phone")}</h2>
-              <a className="mt-2 inline-flex items-center gap-2 font-semibold text-maroon hover:underline" href={`tel:${siteConfig.ownerPhone}`}>
-                <span aria-hidden>📞</span> {t("contact.callNow") || "Call Panditji"}
+              <p className="mt-1 text-ink/75 text-sm">Direct line to Pandit Ganapati Maarigoli:</p>
+              <a className="mt-1 inline-flex items-center gap-2 font-bold text-xl text-maroon hover:underline" href={`tel:${siteConfig.ownerPhone}`}>
+                <span aria-hidden>📞</span> +91 78926 76490 <span className="font-normal text-sm text-ink/70">(07892676490)</span>
               </a>
+              <p className="mt-1">
+                <a className="text-maroon/90 hover:underline inline-flex items-center gap-1.5 text-base" href="tel:+917019089159">
+                  <span aria-hidden>📞</span> Alternate Helpline: +91 70190 89159
+                </a>
+              </p>
             </div>
             <div>
               <h2 className="font-display text-2xl text-maroon">{t("contact.email")}</h2>

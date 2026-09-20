@@ -218,32 +218,35 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang={initialLocale} data-scroll-behavior="smooth" className={`${noto.variable} ${inter.variable}`}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-        {/* Google Tag (gtag.js) for Google Ads */}
+        {/* Google tag (gtag.js) */}
         {/* eslint-disable-next-line @next/next/next-script-for-ga */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-18461450287"
-        />
+        ></script>
         {/* eslint-disable-next-line @next/next/next-script-for-ga */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-18461450287');
-              gtag('event', 'conversion', {
-                'send_to': 'AW-18461450287/b-a3COulm_0cEK_AjeNE',
-                'value': 1.0,
-                'currency': 'INR'
-              });
-            `,
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-18461450287');`,
           }}
-        />
+        ></script>
+        {/* Event snippet for Page view conversion page */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `gtag('event', 'conversion', {
+  'send_to': 'AW-18461450287/b-a3COulm_0cEK_AjeNE',
+  'value': 1.0,
+  'currency': 'INR'
+});`,
+          }}
+        ></script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        ></script>
       </head>
       <body className="min-h-screen flex flex-col bg-parchment text-ink">
         {/* Global Google Ads Call & WhatsApp Event Tracker */}
