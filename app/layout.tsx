@@ -236,6 +236,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-18461450287');
+            gtag('event', 'conversion', {
+              'send_to': 'AW-18461450287/b-a3COulm_0cEK_AjeNE',
+              'value': 1.0,
+              'currency': 'INR'
+            });
           `}
         </Script>
 

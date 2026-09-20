@@ -1,4 +1,7 @@
 export const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || "AW-18461450287";
+export const GOOGLE_ADS_CONVERSION_SEND_TO =
+  process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_SEND_TO ||
+  "AW-18461450287/b-a3COulm_0cEK_AjeNE";
 
 declare global {
   interface Window {
@@ -23,7 +26,7 @@ export function trackGoogleAdsEvent(
   }
 
   window.gtag("event", action, {
-    send_to: GOOGLE_ADS_ID,
+    send_to: GOOGLE_ADS_CONVERSION_SEND_TO,
     ...params,
   });
 }
@@ -39,9 +42,11 @@ export function trackCallConversion(phone: string = "Panditji") {
 
   // Google Ads conversion event
   window.gtag("event", "conversion", {
-    send_to: GOOGLE_ADS_ID,
+    send_to: GOOGLE_ADS_CONVERSION_SEND_TO,
     event_category: "Contact",
     event_label: "Call Panditji",
+    value: 1.0,
+    currency: "INR",
   });
 
   // Google Analytics & Ads standard lead action
@@ -68,9 +73,11 @@ export function trackWhatsAppConversion() {
 
   // Google Ads conversion event
   window.gtag("event", "conversion", {
-    send_to: GOOGLE_ADS_ID,
+    send_to: GOOGLE_ADS_CONVERSION_SEND_TO,
     event_category: "Contact",
     event_label: "WhatsApp Chat",
+    value: 1.0,
+    currency: "INR",
   });
 
   // Google Analytics & Ads standard lead action
